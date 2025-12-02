@@ -1,41 +1,298 @@
-/* Header layout */
-.header {
-  display: flex;
-  justify-content:space-evenly; /* Logo left + nav right */
-  align-items: center;
-  padding: 20px 40px;
-  
+/* ------------------- Reset & Global ------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.logo
-{
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ------------------- Header ------------------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px; /* reduce top/bottom padding */
+  max-width: auto;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
   width: 120px;
   height: auto;
 }
 
-/* Navigation list horizontal */
-.nav-list {
-  list-style: none;
-  display: flex;        /* horizontal layout */
-  gap: 30px;            /* spacing between items */
-  margin: 0;
-  padding: 0;
+header .logo span {
+  font-weight: bold;
+  font-size: 24px;
 }
 
-/* Nav links */
-.nav-list li a {
-  text-decoration: none;
-  color: #495e57;
-  font-weight: 600;
-}
-.nav-list li a:hover {
-  color: #f4ce14;        /* Little Lemon yellow */
-}
-.footer
-{
+nav {
   display: flex;
-  flex-direction: row;
-  justify-content:space-around; /* Logo left + nav right */
   align-items: center;
-  padding: 20px 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f4d03f;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ------------------- Hero Section ------------------- */
+.hero {
   
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #1a472a;
+  color: #fff;
+  height: 500px;
+}
+
+.hero-text {
+  padding-left: 30px;
+  flex: 1 1 500px;
+  max-width: 500px;
+ 
+}
+.hero-text h2{
+  font-size: 32px;
+  padding-bottom: 20px;
+}
+
+.hero-text h1 {
+  font-family: 'Georgia', serif;
+  font-size: 40px;
+ 
+   color: #F4CE14;
+   text-shadow: #555;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-text .btn {
+  background-color: #f4d03f;
+  color: #000;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 16px;
+  display: inline-block;
+  transition:background-image 0.3s, transform 0.3s;
+}
+
+.hero-text .btn:hover {
+  background-color: #e6c233;
+  transform: scale(1.05);
+}
+
+.hero-image {
+  padding-top: 60px;
+  padding-left: 40px;
+  flex: 1 1 500px;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+max-width: 400px;
+  max-height: 500px;
+  border-radius: 16px;
+}
+
+/* ------------------- Specials Section ------------------- */
+.specials {
+  padding: 80px;
+  background-color: #fff;
+}
+
+.specials-header {
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  
+  gap: 15px;
+}
+
+.specials-header h2 {
+  font-family: 'Georgia', serif;
+  font-size: 36px;
+}
+
+.specials-header .btn {
+  background-color: #f4d03f;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 16px;
+}
+
+.specials-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Card Styles */
+.card {
+  background-color: #f8f8f8;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-family: 'Georgia', serif;
+  margin: 15px 0 10px 0;
+}
+
+.title-price {
+  padding-left: 40px;
+  display: flex;  
+justify-content: space-between;  /* Push title left, price right */
+align-items: center; 
+        /* Vertically centered */
+  margin: 8px 0;                  /* Optional spacing */
+  gap: 60px;
+}
+
+.title-price h3 {
+  margin: 0;  /* Remove default spacing */
+}
+
+.title-price h3,
+.title-price .price {
+  margin: 0;
+}
+
+
+.title-price .price {
+  
+  font-weight: bold;
+  font-size: 16px;
+  color: #df0b08;
+}
+
+.card p {
+  padding: 0 20px;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.card span {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ------------------- Footer ------------------- */
+footer {
+  background-color: #1a472a;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+/* ------------------- Responsive ------------------- */
+@media (max-width: 900px) {
+  /* Hero stacking */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    margin-top: 20px;
+  }
+
+  /* Hamburger menu */
+  .nav-toggle {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin-bottom: 15px;
+  }
+
+  nav ul li:last-child {
+    margin-bottom: 0;
+  }
 }

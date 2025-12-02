@@ -1,19 +1,16 @@
 import React from 'react';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
 import './App.css';
-import Header from './Header.js';
-import Footer from './Footer.js';
-import Nav from './Nav.js';
-import Main from './Main.js';
-
 
 function App() {
   return (
     <>
       <Header />
-       
       <Main />
       <Footer />
-   </>
+    </>
   );
 }
 
