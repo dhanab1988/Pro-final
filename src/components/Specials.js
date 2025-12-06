@@ -10,10 +10,10 @@ function Specials() {
       image: "Assets/greek salad.jpg",
     },
     {
-      title: "Bruschetta",
+      title: "Bruchetta",
       price: "$5.99",
       description:
-        "Our Bruschetta is made from grilled bread that has been smeared with garlic and olive oil.",
+        "Our Bruchetta is made from grilled bread that has been smeared with garlic and olive oil.",
       image: "Assets/bruchetta.svg",
     },
     {
@@ -28,7 +28,7 @@ function Specials() {
   return (
     <section className="specials">
       <div className="specials-header">
-        <h2>Specials</h2>
+        <h2>This week Specials!</h2>
         <button>Online Menu</button>
       </div>
 

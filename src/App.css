@@ -1,4 +1,4 @@
-/* ---------------- Reset & globals ---------------- */
+/* ---------------- Reset & Globals ---------------- */
 *,
 *::before,
 *::after {
@@ -7,16 +7,16 @@
   padding: 0;
 }
 
-:root{
+:root {
   --black: #111;
   --dark-gray: #6f6f6f;
   --mid-gray: #d9d9d9;
   --light-gray: #eee;
-  --accent: #f4ce14; /* replace with brand accent if needed */
+  --accent: #f4ce14;
   --card-bg: #f7f7f7;
   --max-width: 1100px;
   --container-padding: 1.25rem;
-  --radius: 8px;
+  --radius: 16px;
   --text: #222;
   --muted: #777;
   --white: #fff;
@@ -24,478 +24,392 @@
   --break-md: 1000px;
 }
 
-html, body, #root {
-  height: 100%;
-}
-
-body{
-  font-family: "Arial", sans-serif;
+body {
+  font-family: "Karla", sans-serif;
   color: var(--text);
   line-height: 1.5;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-
-  padding: 0;
-  margin: 0;
+  background-color: var(--white);
 }
 
-/* Utility container to center content */
+/* ---------------- Utility ---------------- */
 .container {
-  width: min(var(--max-width), 95%);
-  margin: 0 auto;
-  padding: 2rem 0;
+  width: min(100%, var(--max-width));
+  margin: auto;
+  padding: var(--container-padding);
 }
 
-/* ---------------- Nav ---------------- */
-.logo
-{
+/* ---------------- Navigation ---------------- */
+.logo {
   width: 120px;
-  height: auto;
-  
 }
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #d9d9d9;
+  background-color: #EDEFEE;
   padding: 1rem;
   border-bottom: 1px solid var(--mid-gray);
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
 }
 
-
-
-/* Navigation list horizontal */
 .nav-list {
+  display: flex;
+  gap: 30px;
   list-style: none;
-  display: flex;        /* horizontal layout */
-  gap: 30px;            /* spacing between items */
-  margin: 0;
-  padding: 0;
-  
 }
 
-/* Nav links */
-.nav-list li link {
+.nav-list li a {
   text-decoration: none;
-  color: #495e57;
+  color: #495E57;
   font-weight: 600;
-}
-.nav-list li link:hover {
-  color: #f4ce14;        /* Little Lemon yellow */
+  letter-spacing: 0.3px;
+  transition: 0.2s ease;
 }
 
-/* ---------------- CallToAction (Hero) ---------------- */
-/* --- CTA Section --- */
+.nav-list li a:hover {
+  color: var(--accent);
+}
+
+/* ---------------- Hero (CTA) ---------------- */
 .cta {
   background-color: #495E57;
   color: white;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px 80px; /* reduced from 120px */
-  gap: 40px;
-  height: 400px;
+  align-items:center;
+  justify-content: space-around;
+  padding: 10px 1.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Left text area */
 .cta-text {
-  max-width: 420px;
+   max-width: 450px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
+  
 }
 
-/* Title */
 .cta-text h1 {
-  font-size: 46px;
+  font-size: 2.8rem;
   font-weight: 800;
-  color: #F4CE14;
-  margin: 0;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
 }
 
 .cta-text h2 {
-  font-size: 28px;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: white;
-  margin: 0;
 }
 
-/* Paragraph */
 .cta-text p {
-  font-size: 1rem;
+  max-width: 350px;
+  color: #eaeaea;
   line-height: 1.5;
-  max-width: 330px;
-  color: #EDEDED;
 }
 
-
-/* Button */
 .cta-text button {
-  background-color: #F4CE14;
+  background-color: #C4A10A;
   color: #000;
   padding: 12px 26px;
-  border-radius: 10px;
-  font-size: 1rem;
+  border-radius: var(--radius);
   font-weight: 700;
-  border: none;
   cursor: pointer;
-  width: fit-content;
+  width: 200px;
+  border: none;
 }
 
 .cta-text button:hover {
-  background-color: #e3bd0d;
-}
-
-/* Image */
-.cta-image {
-  padding-top: 60px;     /* or any value you prefer */
-  overflow: visible;     /* prevents image or shadow from being cropped */
+  background-color: #d1b812;
 }
 
 .cta-image img {
-  display: block;        /* removes unwanted gaps */
-  width: 350px;
+  margin-top: 20px;
+  margin-bottom: -50px;
+  width: 320px;
   height: 420px;
-  object-fit: cover;     /* prevents top cropping */
-  border-radius: 18px;
-  box-shadow: 0px 6px 20px rgba(0,0,0,0.25); 
-  margin-top: 0;         /* ensures no negative shift */
+  border-radius: var(--radius);
+  object-fit:cover;
+  box-shadow: 5px 6px 20px rgba(0,0,0,0.25);
 }
 
-/* --- Responsive --- */
+/* Responsive Hero */
 @media (max-width: 900px) {
   .cta {
     flex-direction: column;
     text-align: center;
-    padding: 40px 20px;
   }
-
   .cta-text {
     align-items: center;
   }
-
-  .cta-image img {
-    width: 300px;
-    height: 300px;
-  }
 }
-
 
 /* ---------------- Specials ---------------- */
 .specials {
-  padding: 3rem 0;
-  padding-left: 2rem;
-  background: var(--white);
+  padding: 4rem 1.5rem;
+  background-color: #FFF5E1;
 }
 
 .specials-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  align-items: center;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .specials-header h2 {
-  font-size: 1.6rem;
-  letter-spacing: 0.02em;
+  font-size: 1.8rem;
 }
 
 .specials-header button {
-  background-color: #F4CE14;
+  background-color: var(--accent);
   color: #000;
   padding: 12px 26px;
-  border-radius: 10px;
-  font-size: 1rem;
+  border-radius: var(--radius);
   font-weight: 700;
-  border: none;
   cursor: pointer;
-  width: fit-content;
+  transition: 0.3s ease;
+  border: none;
 }
-.specials-header button:hover
-{
-  background-color: #e3bd0d;
+
+.specials-header button:hover {
+  background-color: #d1b812;
 }
-/* grid of cards */
+
+/* Grid */
 .specials-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
-/* Special Card */
-/* --- Base card --- */
+/* ---------------- Card ---------------- */
 .special-card {
   background: #d9d9d9;
-  border-radius: 16px;
+  border-radius: var(--radius);
   padding: 20px;
-  width: 280px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  cursor: pointer;
+  transition: 0.25s ease;
 }
 
-/* Card lift on hover */
 .special-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.18);
 }
 
-/* --- Image animation --- */
 .special-card img {
   width: 100%;
   height: 180px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 }
 
 .special-card:hover img {
   transform: scale(1.05);
 }
 
-/* --- Title + price layout --- */
 .special-card-header {
+  margin: 12px 0;
   display: flex;
   justify-content: space-between;
-  margin: 16px 0 8px;
 }
 
-/* --- Description --- */
-.special-card p {
-  color: #555;
-  line-height: 1.4;
-  margin-bottom: 12px;
-  transition: opacity 0.3s ease;
+.special-card span {
+  color: #f53333;
+  font-weight: 700;
 }
 
-/* Fade text slightly on hover to give focus to link */
-.special-card:hover p {
-  opacity: 0.85;
-}
-
-/* --- Order link animation --- */
 .order-link {
   display: inline-block;
   margin-top: 10px;
   font-weight: 600;
-  color: #495E57;
+  color: #495e57;
   text-decoration: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: 0.3s ease;
 }
 
-/* Link slides slightly on hover */
 .special-card:hover .order-link {
+  transform: translateX(4px);
   opacity: 1;
-  transform: translateX(2px);
-}
-
-.special-card-header span
-{
-  color: rgb(241, 48, 48);
 }
 
 /* ---------------- Testimonials ---------------- */
 .testimonials {
-  background: grey;
-  padding: 3rem 0;
+  padding: 3rem 1.5rem;
+  background-color: #495E57;
   color: black;
+  font-weight: 200;
+  text-align: center;
 }
 
 .testimonials h2 {
-  text-align: center;
+  font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  font-size: 1.2rem;
 }
 
 .testimonials-grid {
-  width: 95%;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  padding: 0 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.5rem;
 }
 
 .testimonial-card {
-  background: var(--white);
+  background: #EDEFEE;
+  border-radius: var(--radius);
   padding: 1rem;
-  border-radius: 6px;
-  text-align: left;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
 }
 
-.testimonial-card h4 {
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
+.testimonial-card:hover {
+  transform: translateY(-5px);
 }
 
-.testimonial-card .testimonial-img {
-  width: 56px;
-  height: 56px;
+.rating {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.testimonial-img {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 0.5rem;
 }
 
-/* ---------------- Chicago (About) ---------------- */
+.testimonial-name {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #495e57;
+}
+
+/* ---------------- Chicago Section ---------------- */
 .chicago {
-  padding: 3.5rem 0;
-  background: var(--white);
+  background-color: #FFF5E1;
+  padding: 3rem 1.5rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.chicago .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
+.chicago-text {
+  max-width: 460px;
 }
 
 .chicago-text h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.25rem;
+  font-size: 2.6rem;
+  color: var(--accent);
 }
 
 .chicago-text h2 {
-  font-size: 1rem;
-  color: var(--muted);
+  font-size: 1.6rem;
+  color: #495e57;
   margin-bottom: 1rem;
 }
 
-.chicago-text p {
-  max-width: 520px;
-  color: var(--text);
-  margin-bottom: 0.6rem;
-}
-
-/* overlapping images */
 .chicago-images {
   position: relative;
-  width: 100%;
-  min-height: 260px;
+  width: 380px;
+  height: 380px;
 }
 
-.chicago-images .img-top,
-.chicago-images .img-bottom {
-  width: 260px;
+.chicago-images img {
+  width: 300px;
   height: 320px;
   object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-radius: var(--radius);
   position: absolute;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-.chicago-images .img-top {
+.img-top {
+  top: 0;
   right: 0;
-  top: -10px;
 }
 
-.chicago-images .img-bottom {
-  left: 40px;
-  top: 60px;
-  transform: rotate(-2deg);
+.img-bottom {
+  bottom: 0;
+  left: 0;
 }
 
 /* ---------------- Footer ---------------- */
 footer {
-  background: var(--mid-gray);
-  color: #123; /* dark text in footer */
-  padding: 2.5rem 0;
+  background: #edefee;
+  padding: 3rem 1.5rem;
 }
 
 .footer-grid {
-  width: min(var(--max-width), 95%);
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.25rem;
-  align-items: start;
 }
 
 .footer-grid h4 {
+  color: #495e57;
   margin-bottom: 0.6rem;
 }
 
 .footer-grid ul {
   list-style: none;
-  padding-left: 0;
   line-height: 1.8;
 }
 
-/* small / utility */
-.center {
-  text-align: center;
+.social-icons a {
+  font-size: 24px;
+  color: #000;
+  margin-right: 15px;
+  transition: 0.3s;
 }
 
-/* ---------------- Responsive ---------------- */
-/* medium screens: collapse hero columns */
-@media (max-width: var(--break-md)) {
-  .cta .container {
-    grid-template-columns: 1fr 350px;
-  }
-  .chicago .container {
-    grid-template-columns: 1fr;
-  }
-  .chicago-images {
-    min-height: 320px;
-    margin-top: 1rem;
-  }
-  .chicago-images .img-top,
-  .chicago-images .img-bottom {
-    position: relative;
-    width: 60%;
-    height: 220px;
-    left: 0;
-    transform: none;
-  }
+.social-icons a:hover {
+  color: var(--accent);
 }
 
-/* small screens: single column layout */
-@media (max-width: var(--break-sm)) {
-  .nav ul {
-    gap: 0.9rem;
-    font-size: 0.9rem;
+/* Hamburger (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .nav {
+    padding: 1rem;
   }
 
-  .cta .container {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 1.25rem 0;
+  .nav-list {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #fff;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    display: none;  /* hidden default */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
   }
 
-  .cta-text h1 {
-    font-size: 2rem;
+  .nav-list.show {
+    display: flex; /* visible when toggled */
   }
 
-  .specials-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonials-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .chicago .container {
-    grid-template-columns: 1fr;
-  }
-
-  .chicago-images .img-top,
-  .chicago-images .img-bottom {
-    width: 100%;
-    height: 220px;
-    position: relative;
-    margin-bottom: 0.75rem;
-  }
-
-  .special-card img {
-    height: 200px;
+  .nav-toggle {
+    display: block; /* show hamburger */
   }
 }

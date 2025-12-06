@@ -1,10 +1,11 @@
+
 function Footer() {
   return (
     <footer>
       <div className="footer-grid">
 
         <div>
-          <img src="/logo.png" alt="Little Lemon Logo" className="footer-logo" />
+          <img src="Assets/logo .svg" alt="Little Lemon Logo" className="footer-logo" />
         </div>
 
         <div>
@@ -28,9 +29,13 @@ function Footer() {
 
         <div>
           <h4>Social Media Links</h4>
-          <p>Address</p>
-          <p>Phone Number</p>
-          <p>Email</p>
+          <div class="social-icons">
+  <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+  <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+  <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+  <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+</div>
         </div>
 
       </div>

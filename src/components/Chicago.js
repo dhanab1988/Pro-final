@@ -15,8 +15,9 @@ function Chicago() {
       </div>
 
       <div className="chicago-images">
-        <img src="/about1.jpg" alt="Restaurant" className="img-top" />
-        <img src="/about2.jpg" alt="Restaurant" className="img-bottom" />
+         <img src="Assets/about1.avif" alt="Restaurant" className="img-top" />
+        <img src="Assets/restaurant.jpg" alt="Restaurant" className="img-bottom" />
+       
       </div>
     </section>
   );

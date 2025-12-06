@@ -6,7 +6,7 @@ import Main from "./Main";
 import Footer from "./components/Footer";
 
 import "./App.css";
-
+import "./TestimonialsSection.js";
 function App() {
   return (
     <BrowserRouter>

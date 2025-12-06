@@ -2,10 +2,10 @@ import TestimonialCard from "./TestimonialCard";
 
 function Testimonials() {
   const reviews = [
-    { name: "Name", text: "Review text", image: "/user1.jpg" },
-    { name: "Name", text: "Review text", image: "/user2.jpg" },
-    { name: "Name", text: "Review text", image: "/user3.jpg" },
-    { name: "Name", text: "Review text", image: "/user4.jpg" },
+    { name: "Vicky", text: "Review text", image: "/Assets/user1.avif" },
+    { name: "Stella", text: "Review text", image: "/Assets/user2.avif" },
+    { name: "Merline", text: "Review text", image: "/Assets/user3.avif" },
+    { name: "Jacob", text: "Review text", image: "/Assets/user4.avif" },
   ];
 
   return (
