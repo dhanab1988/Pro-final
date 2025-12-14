@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom';
+
 function CallToAction() {
   return (
     <section className="cta">
@@ -7,7 +9,10 @@ function CallToAction() {
         <p>
           We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
         </p>
-        <button>Reserve a Table</button>
+      <Link to="/booking" className="reserve-link">
+  <button className="reserve-btn">Reserve a Table</button>
+</Link>
+
       </div>
 
       <div className="cta-image">

@@ -132,17 +132,6 @@ nav a:hover {
   max-width: 100%;
 }
 
-/* ------------------- Footer ------------------- */
-footer {
-  background-color: #f4ce8b;
-  padding: 2rem;
-  text-align: center;
-}
-
-footer p {
-  margin: 0.5rem 0;
-}
-
 /* ------------------- Buttons ------------------- */
 .btn {
   display: inline-block;
@@ -297,4 +286,96 @@ select:focus {
   color: #df0b08; /* match your price red */
   font-size: 18px;
   margin-bottom: 10px;
+}
+
+/* ---------------- Footer Styles ---------------- */
+footer {
+  background-color: #f4ce8b; /* Light lemon background */
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  color: #333; /* Dark text */
+}
+
+/* Grid layout for footer sections */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+footer h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+/* Navigation links */
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Remove underline and default blue for all footer links */
+footer a {
+  text-decoration: none;  /* removes underline */
+  color: inherit;         /* uses parent text color */
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #e67e22; /* optional hover color */
+}
+
+/* Logo */
+.footer-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Contact / address */
+address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #e67e22;
+}
+
+/* Footer paragraphs */
+footer p {
+  margin: 0.5rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }

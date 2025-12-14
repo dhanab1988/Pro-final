@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function SpecialCard({ title, price, description, image }) {
   return (
     <div className="special-card">
@@ -10,9 +12,9 @@ function SpecialCard({ title, price, description, image }) {
 
       <p>{description}</p>
 
-      <a href="#" className="order-link">
-        Order a delivery 🚴
-      </a>
+      <Link to="/order" className="order-link">
+  Order a delivery 🚴
+</Link>
     </div>
   );
 }

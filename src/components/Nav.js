@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {useState} from "react";
+import CartBadge from "./CartBadge.js";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,15 @@ function Nav() {
         <li><Link to="/booking">Reservations</Link></li>
         <li><Link to="/order">Order Online</Link></li>
         <li><Link to="/login">Login</Link></li>
-      </ul>
+
+         {/* Cart Badge inside menu for mobile */}
+          <li className="nav-cart-mobile">
+            <CartBadge />
+          </li>
+        </ul>
+
+        
+      
     </nav>
   );
 }

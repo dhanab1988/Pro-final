@@ -1,44 +1,51 @@
+import { Link } from "react-router-dom";
+
+
 
 function Footer() {
   return (
     <footer>
-      <div className="footer-grid">
+      <section className="footer-grid">
 
+        {/* Logo */}
         <div>
-          <img src="Assets/logo .svg" alt="Little Lemon Logo" className="footer-logo" />
+          <img src="./Assets/Logo .svg" alt="Little Lemon Logo" className="footer-logo" />
         </div>
 
-        <div>
+        {/* Navigation */}
+        <nav aria-label="Doormat Navigation">
           <h4>Doormat Navigation</h4>
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Menu</li>
-            <li>Reservations</li>
-            <li>Order Online</li>
-            <li>Login</li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/menu">Menu</Link></li>
+        <li><Link to="/booking">Reservations</Link></li>
+        <li><Link to="/order">Order Online</Link></li>
+        <li><Link to="/login">Login</Link></li>
           </ul>
-        </div>
+        </nav>
 
-        <div>
+        {/* Contact Information */}
+        <address>
           <h4>Contact</h4>
-          <p>Address</p>
-          <p>Phone Number</p>
-          <p>Email</p>
-        </div>
+          <p>123 Main Street, Chicago, IL</p>
+          <p>+1 234 567 890</p>
+          <p>Email: info@littlelemon.com</p>
+        </address>
 
-        <div>
+        {/* Social Media Links */}
+        <section>
           <h4>Social Media Links</h4>
-          <div class="social-icons">
-  <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-  <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-  <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-  <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-  <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-</div>
-        </div>
+          <div className="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube"></i></a>
+          </div>
+        </section>
 
-      </div>
+      </section>
     </footer>
   );
 }
