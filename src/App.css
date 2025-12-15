@@ -968,14 +968,14 @@ footer p {
 }
 
 .login-card button {
-  width: 100%;
-  padding: 12px;
-  background: var(--accent);
-  border: none;
+  background-color: #C4A10A;
+  color: #000;
+  padding: 12px 26px;
+  border-radius: var(--radius);
   font-weight: 700;
-  border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s ease;
+  width: 200px;
+  border: none;
 }
 
 .login-card button:hover {
@@ -1214,3 +1214,74 @@ footer p {
   }
 }
 
+/* Confirmation Page */
+.confirmation-page
+{
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #495E57;
+  color:var(--accent);
+  text-shadow: black;
+}
+
+.confirmation-table
+{
+  color: white;
+  text-align: left;
+  border-color: antiquewhite;
+  border: antiquewhite;
+  border-style:solid;
+  
+}
+td {
+
+  height: 50px;
+  width: 200px;
+  vertical-align: bottom;
+}
+.confirmation-actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+
+.confirmation-actions button {
+background-color: #C4A10A;
+  color: #000;
+  padding: 12px 26px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+  width: 200px;
+  border: none;
+}
+.confirmation-actions button:hover, .home-link:hover
+{
+  background-color: #d1b812;
+}
+table
+{
+  padding: 20px;
+  align-items: center;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+.home-link {
+  background-color: #C4A10A;
+  text-decoration: none;
+  color: #000;
+  padding: 12px 26px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+  border: none;
+}

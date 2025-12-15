@@ -1,17 +1,11 @@
-// src/BookingForm.test.js
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import BookingForm from "./components/BookingForm"; // Correct relative path
+import BookingForm from "./components/BookingForm";
 
-// Mock props
 const mockDispatch = jest.fn();
 const mockSubmitForm = jest.fn();
 
 const mockAvailableTimes = {
-  breakfast: [
-    { time: "07:00", label: "7:00 AM", available: true },
-    { time: "07:30", label: "7:30 AM", available: true },
-  ],
   lunch: [
     { time: "12:00", label: "12:00 PM", available: true },
     { time: "12:30", label: "12:30 PM", available: true },
@@ -45,7 +39,7 @@ describe("BookingForm component", () => {
       />
     );
 
-    const nameInput = screen.getByLabelText("Full Name");
+    const nameInput = screen.getByPlaceholderText("Full Name");
     expect(nameInput).toBeInTheDocument();
   });
 
@@ -58,7 +52,8 @@ describe("BookingForm component", () => {
       />
     );
 
-    const dateInput = screen.getByLabelText("Reservation Date");
+    const today = new Date().toISOString().split("T")[0];
+    const dateInput = screen.getByDisplayValue(today);
     expect(dateInput).toBeInTheDocument();
   });
 });

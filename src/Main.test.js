@@ -1,4 +1,4 @@
-// src/Main.test.js
+/* // src/Main.test.js
 import { initializeTimes, updateTimes } from "./Main";
 
 describe("Booking reducer functions", () => {
@@ -38,5 +38,66 @@ describe("Booking reducer functions", () => {
     expect(result.breakfast.every(slot => slot.available)).toBe(true);
     expect(result.lunch.every(slot => slot.available)).toBe(true);
     expect(result.dinner.every(slot => slot.available)).toBe(true);
+  });
+});
+ */
+import { initializeTimes, updateTimes } from "../src/Main";
+
+describe("initializeTimes", () => {
+  it("returns categorized times from fetchAPI", () => {
+    // Mock fetchAPI to return predictable times
+    window.fetchAPI = jest.fn(() => ["12:00", "13:00", "18:00"]);
+
+    const result = initializeTimes();
+
+    // Lunch times (12:00-17:59)
+    expect(result.lunch).toEqual([
+      { time: "12:00", label: "12:00 PM", available: true },
+      { time: "13:00", label: "1:00 PM", available: true },
+    ]);
+
+    // Dinner times (18:00+)
+    expect(result.dinner).toEqual([
+      { time: "18:00", label: "6:00 PM", available: true },
+    ]);
+
+    // Clean up mock
+    delete window.fetchAPI;
+  });
+});
+
+describe("updateTimes", () => {
+  it("categorizes times based on the given date", () => {
+    const mockDate = "2025-12-20";
+
+    // Mock fetchAPI
+    window.fetchAPI = jest.fn(() => ["12:00", "13:00", "18:00"]);
+
+    const initialState = { lunch: [], dinner: [] };
+
+    const newState = updateTimes(initialState, {
+      type: "UPDATE_TIMES",
+      date: mockDate,
+    });
+
+    // Check lunch
+    expect(newState.lunch).toEqual([
+      { time: "12:00", label: "12:00 PM", available: true },
+      { time: "13:00", label: "1:00 PM", available: true },
+    ]);
+
+    // Check dinner
+    expect(newState.dinner).toEqual([
+      { time: "18:00", label: "6:00 PM", available: true },
+    ]);
+
+    // Clean up mock
+    delete window.fetchAPI;
+  });
+
+  it("returns state unchanged for unknown action type", () => {
+    const initialState = { lunch: [], dinner: [] };
+    const result = updateTimes(initialState, { type: "UNKNOWN" });
+    expect(result).toEqual(initialState);
   });
 });

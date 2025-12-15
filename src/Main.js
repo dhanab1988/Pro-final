@@ -7,6 +7,8 @@ import OrderOnline from "./components/OrderOnline";
 import LoginPage from "./components/LoginPage";
 import MenuPage from "./pages/MenuPage";
 import { categorizeTimes } from "./utils";
+import ConfirmationPage from "./pages/ConfirmationPage";
+
 
 /* ---------------- Cache ---------------- */
 const timesCache = {}; // Cache times per date
@@ -97,6 +99,9 @@ function Main() {
       <Route path="/order" element={<OrderOnline />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/menu" element={<MenuPage />} />
+      <Route path="/confirmation" element={<ConfirmationPage />} />
+
+
     </Routes>
   );
 }

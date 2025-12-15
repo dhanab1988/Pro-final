@@ -1,18 +1,37 @@
 import React, { useState, useEffect } from "react";
 
-function BookingForm({ availableTimes, dispatch, submitForm }) {
+function BookingForm({
+  availableTimes,
+  dispatch,
+  submitForm,
+  initialData,
+}) {
   const today = new Date().toISOString().split("T")[0];
 
-  const [formData, setFormData] = useState({
+  const defaultData = {
     name: "",
     email: "",
-    date: today, // Default to today
+    date: today,
     time: "",
     guests: "",
     occasion: "",
     seating: "",
     message: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(initialData || defaultData);
+
+  /* Pre-fill form when editing reservation */
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData);
+    }
+  }, [initialData]);
+
+  /* Update available times when date changes */
+  useEffect(() => {
+    dispatch({ type: "UPDATE_TIMES", date: formData.date });
+  }, [formData.date, dispatch]);
 
   /* Reset time if unavailable */
   useEffect(() => {
@@ -21,15 +40,13 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       ...availableTimes.dinner,
     ];
 
-    if (formData.time && !allTimes.some((t) => t.time === formData.time)) {
+    if (
+      formData.time &&
+      !allTimes.some((t) => t.time === formData.time)
+    ) {
       setFormData((prev) => ({ ...prev, time: "" }));
     }
   }, [availableTimes, formData.time]);
-
-  /* Update available times when date changes */
-  useEffect(() => {
-    dispatch({ type: "UPDATE_TIMES", date: formData.date });
-  }, [formData.date, dispatch]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,22 +55,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (typeof window.submitAPI === "function") {
-      const success = window.submitAPI(formData);
-      alert(success ? "Booking submitted!" : "Submission failed.");
-    }
-
-    // Reset form but keep date
-    setFormData({
-      ...formData,
-      name: "",
-      email: "",
-      time: "",
-      guests:"",
-      occasion: "",
-      seating: "",
-      message: "",
-    });
+    submitForm(formData);
   };
 
   return (
@@ -80,6 +82,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         type="date"
         name="date"
         value={formData.date}
+        min={today}
         onChange={handleChange}
         required
       />
@@ -128,19 +131,18 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       </select>
 
       <select
-  name="guests"
-  value={formData.guests}
-  onChange={handleChange}
-  required
->
-  <option value="">Number of Guests</option>   {/* Default placeholder */}
-  {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
-    <option key={num} value={num}>
-      {num}
-    </option>
-  ))}
-</select>
-
+        name="guests"
+        value={formData.guests}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Number of Guests</option>
+        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+          <option key={num} value={num}>
+            {num}
+          </option>
+        ))}
+      </select>
 
       <fieldset className="seating-options full-width">
         <legend>Seating Options</legend>
@@ -149,8 +151,8 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
           <input
             type="radio"
             name="seating"
-            value="indoor"
-            checked={formData.seating === "indoor"}
+            value="Indoor"
+            checked={formData.seating === "Indoor"}
             onChange={handleChange}
             required
           />
@@ -161,8 +163,8 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
           <input
             type="radio"
             name="seating"
-            value="outdoor"
-            checked={formData.seating === "outdoor"}
+            value="Outdoor"
+            checked={formData.seating === "Outdoor"}
             onChange={handleChange}
           />
           Outdoor
