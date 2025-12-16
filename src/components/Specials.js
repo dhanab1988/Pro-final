@@ -1,4 +1,6 @@
 import SpecialCard from "./SpecialCard";
+import { Link } from "react-router-dom";
+
 
 function Specials() {
   const specials = [
@@ -29,7 +31,9 @@ function Specials() {
     <section className="specials">
       <div className="specials-header">
         <h2>This week Specials!</h2>
-        <button>Online Menu</button>
+        <Link to="/menu">
+  <button>Online Menu</button>
+</Link>
       </div>
 
       <div className="specials-grid">

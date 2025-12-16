@@ -1,15 +1,21 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
-export default function CartBadge() {
-  const { cartCount } = useCart();
+function CartBadge({ showText = false }) {
+  const { cart } = useCart();
+
+  // total quantity, not just item count
+  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+
+  if (count === 0) return null;
 
   return (
-    <div className="cart-badge">
+    <Link to="/cart" className="cart-badge-link">
       🛒
-      {cartCount > 0 && (
-        <span className="cart-count">{cartCount}</span>
-      )}
-    </div>
+      <span className="badge-count">{count}</span>
+      {showText && <span className="cart-text"> Cart</span>}
+    </Link>
   );
 }
+
+export default CartBadge;

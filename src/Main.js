@@ -8,6 +8,8 @@ import LoginPage from "./components/LoginPage";
 import MenuPage from "./pages/MenuPage";
 import { categorizeTimes } from "./utils";
 import ConfirmationPage from "./pages/ConfirmationPage";
+import CheckoutConfirmationPage from "./pages/CheckoutConfirmationPage";
+
 
 
 /* ---------------- Cache ---------------- */
@@ -100,7 +102,7 @@ function Main() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/confirmation" element={<ConfirmationPage />} />
-
+<Route path="/checkout-confirmation" element={<CheckoutConfirmationPage />} />
 
     </Routes>
   );

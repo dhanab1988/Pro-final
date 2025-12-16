@@ -1,4 +1,4 @@
-import TestimonialCard from "./TestimonialCard";
+import TestimonialCard from  './TestimonialCard';
 
 function Testimonials() {
   const reviews = [

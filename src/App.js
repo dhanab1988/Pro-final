@@ -3,7 +3,7 @@ import Nav from "./components/Nav";
 import Main from "./Main";
 import Footer from "./components/Footer";
 import "./App.css";
-import "./TestimonialsSection.js";
+import "./components/TestimonialCard.js";
 
 import { CartProvider } from "./context/CartContext.js";
 
