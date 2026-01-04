@@ -9,7 +9,7 @@ function Footer() {
         {/* Logo */}
         <div>
           <img
-            src="/Assets/Logo.svg"
+            src={process.env.PUBLIC_URL + "/Assets/Logo.svg"}
             alt="Little Lemon Logo"
             className="footer-logo"
           />

@@ -10,7 +10,7 @@ function Nav() {
 
   return (
     <nav className="nav container">
-      <img src="/Assets/Logo.svg" alt="Little Lemon Logo" className="logo" />
+      <img src={process.env.PUBLIC_URL + "/Assets/Logo.svg"} alt="Little Lemon Logo" className="logo" />
 
       {/* Hamburger button */}
       <button

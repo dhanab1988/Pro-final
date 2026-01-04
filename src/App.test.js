@@ -4,7 +4,7 @@ import App from "./App";
 
 test("renders App without crashing", () => {
   render(
-    <BrowserRouter>
+    <BrowserRouter basename="/Little-Lemon-Capstone-Project">
       <App />
     </BrowserRouter>
   );

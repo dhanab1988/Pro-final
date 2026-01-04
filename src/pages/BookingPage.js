@@ -39,11 +39,11 @@ function BookingPage({ availableTimes, dispatch }) {
           <h6>Find a Table for any occasion</h6>
           <div className="b-img">
             <img
-              src="/Assets/restaurant.jpg"
+              src={process.env.PUBLIC_URL + "/Assets/restaurant.jpg"}
               alt="Cozy indoor seating"
             />
             <img
-              src="/Assets/restaurant chef B.jpg"
+              src={process.env.PUBLIC_URL + "/Assets/restaurant chef B.jpg"}
               alt="Outdoor patio seating"
             />
           </div>

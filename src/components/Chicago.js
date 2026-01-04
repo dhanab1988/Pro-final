@@ -15,8 +15,8 @@ function Chicago() {
       </div>
 
       <div className="chicago-images">
-         <img src="Assets/about1.avif" alt="Restaurant" className="img-top" />
-        <img src="Assets/restaurant.jpg" alt="Restaurant" className="img-bottom" />
+         <img src={process.env.PUBLIC_URL + "/Assets/about1.avif"} alt="Restaurant" className="img-top" />
+        <img src={process.env.PUBLIC_URL + "/Assets/restaurant.jpg"} alt="Restaurant" className="img-bottom" />
        
       </div>
     </section>
