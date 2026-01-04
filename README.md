@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Little Lemon Capstone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
 
-## Available Scripts
+The **Little Lemon** project is a responsive front-end web application for a restaurant. The main goal was to improve the “reserve a table” functionality and overall user experience, making it easier for users to navigate the menu and place reservations.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+* Fully responsive design for desktop and mobile devices.
+* Clean and intuitive interface for browsing the menu.
+* Easy-to-use reservation system.
+* Modern UI with consistent colors, fonts, and layout.
+* Smooth navigation across pages.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **HTML5**: Structure of the web pages.
+* **CSS3**: Styling with responsive design techniques.
+* **JavaScript / React**: Dynamic UI components and interactivity.
+* **React Router**: For page routing.
+* **Context API**: For state management (cart functionality, reservations).
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+   ```bash
+   git clone <your-repo-link>
+   ```
+2. Navigate into the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   cd little-lemon-capstone
+   ```
+3. Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   npm install
+   ```
+4. Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+## Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+little-lemon-capstone/
+│
+├─ public/
+│   └─ index.html
+├─ src/
+│   ├─ assets/       # Images
+│   ├─ components/   # React components
+│   ├─ context/      # Context API for state management
+│   ├─ pages/        # Different pages like Home, Menu, Reservations
+│   └─ App.js
+├─ package.json
+└─ README.md
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Home Page](./src/assets/homepage-screenshot.png)
+![Menu Page](./src/assets/menu-screenshot.png)
+![Reservation Page](./src/assets/reservation-screenshot.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Challenges & Solutions
 
-## Learn More
+* **Challenge:** Confusing “reserve a table” process.
+  **Solution:** Redesigned the reservation form with clear fields and confirmation messages.
+* **Challenge:** Navigation on mobile devices was tricky.
+  **Solution:** Implemented a responsive layout and hamburger menu.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Impact
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Enhanced user experience and reduced booking errors.
+* Users can easily browse the menu and reserve tables without confusion.
+* Clean and modern design increases user engagement.
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Dhanalakshmi**
+Front-End Developer | Passionate about building intuitive web apps
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
